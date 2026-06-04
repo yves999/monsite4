@@ -1,0 +1,149 @@
+  <div align="center">            
+            <h1><u>Gestion du Palmarès des joueurs de tennis</u></h1>
+            <br>
+            <br>
+            <br>    
+  </div>
+
+<br>
+<br>
+<!-- <br>
+<br> -->
+
+<div align="center">
+
+    <form [formGroup]="jtForm">       
+                    
+                    <label><B>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 
+                        Choisir un joueur de tennis </B></label>                
+                    &nbsp;
+                    <select formControlName="jtSelect" id="jtSelect" (change)="getSelectedJt($event) ">
+                            
+                            <option  selected disabled value="" >Faites votre sélection</option> 
+                                                    
+                            <option *ngFor="let jt of liste" [value]="jt.id">{{jt.nom}} {{jt.prenom}}</option>
+                 
+                    </select>
+
+        <br>
+        <br>
+        <br>
+    
+       <div class=text-center>  
+
+                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;            
+                <label><B>&nbsp; &nbsp; &nbsp; &nbsp; Nom (*)</B></label>           
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" formControlName="selectedNom" placeholder="Nom (*)" >
+                <br> 
+                <br>  
+                 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;             
+                <label><B>&nbsp; &nbsp; &nbsp; &nbsp; Prénom (*)</B></label>           
+                 &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="text" formControlName="selectedPrenom" placeholder="Prénom (*)" >
+       </div>
+
+   
+       <h4 style = "color:blue;text-align:left">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;  
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           Tournois du Grand chelem</h4>
+
+
+       <div class=text-center>  
+
+                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;            
+                <label><B>&nbsp; &nbsp; &nbsp; &nbsp; Melbourne</B></label>           
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" formControlName="selectedMel" placeholder="Melbourne" >
+                <br> 
+                <br>  
+                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;             
+                <label><B>&nbsp; &nbsp; &nbsp; &nbsp; Roland Garros</B></label>           
+                 &nbsp; &nbsp;&nbsp;
+                <input type="text" formControlName="selectedRog" placeholder="Roland Garros" >
+                <br> 
+                <br>  
+                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;             
+                <label><B>&nbsp; &nbsp; &nbsp; &nbsp; Wimbledom</B></label>           
+                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                <input type="text" formControlName="selectedWim" placeholder="Wimbledom" >
+                <br> 
+                <br>  
+                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;             
+                <label><B>&nbsp; &nbsp; &nbsp; &nbsp; US OPEN</B></label>           
+                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" formControlName="selectedUso" placeholder="US OPEN" >
+
+       </div>
+
+
+
+            <table border = 0 width= '1400'>
+                <tr>
+                    <td width= '1200' >&nbsp;</td>
+                    <td width= '200'>  <h4><B>(*): Champ obligatoire</B></h4>  </td>
+                </tr>    
+            </table>
+            <br>
+            <br>
+            <br>
+
+        <button type="submit" class="bouton" (click)="onSuppression()">Suppression</button> 
+        
+        <button type="submit" class="bouton" (click)="onModification()">Modification</button>         
+
+        <button type="submit" class="bouton" (click)="onCreation()">Creation</button> 
+        
+        <button type="submit" class="bouton" (click)="onAnnuler()">Annuler</button> 
+
+        <button routerLink="/jt" class="bouton" >Retour</button> 
+
+     </form>     
+
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<!-- 
+<div align="left">
+             
+              <button routerLink="/jt" class="bouton">Retour</button>
+              
+ </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>gestion-jt works!</p> -->

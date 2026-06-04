@@ -1,0 +1,80 @@
+<h1 align="center" *ngIf="joueur"><u>
+  Affichage du Palmarès de {{ joueur.prenom }} {{ joueur.nom }}</u>
+</h1>
+
+<br>
+<br>
+
+
+<h2 style = "color:blue">Tournois du Grand chelem</h2>
+   
+                    <ul>
+                         <li>Melbourne: {{ joueur.mel }} </li>
+                         <li>Roland Garros: {{ joueur.rog }} </li>
+                         <li>Wimbledom: {{ joueur.wim }} </li>
+                         <li>US open: {{ joueur.uso }} </li>        
+                    </ul> 
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div align="left">
+             
+              <button routerLink="/affichage-jt" class="bouton">Retour</button>
+              
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1 align="center" *ngIf="prenom && nom">
+  Affichage du Palmarès de {{ prenom }} {{ nom }}
+</h1> -->
+
+
+
+<!-- <h1 align="center">Affichage du Palmarès de {{prenom}}  {{nom}} </h1> -->
+
+<!-- {{prenom}}  {{nom}} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>affichage-jt2 works!</p>
+
+{{idJt}}
+ -->

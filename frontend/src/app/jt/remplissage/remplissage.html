@@ -1,0 +1,52 @@
+<h1 align="center">Ajout de joueurs de tennis</h1>
+
+<br>
+<br>
+
+<br>
+<br>
+
+<div align = center>
+
+        <form (ngSubmit)="ajouter()">
+
+        <input [(ngModel)]="nom" name="nom" placeholder="Nom">
+
+        <input [(ngModel)]="prenom" name="prenom" placeholder="Prenom">
+
+        <button type="submit">Ajouter</button>
+
+        </form>
+
+        
+
+</div>        
+
+  <div align="left">
+
+                <ul>
+                    <li *ngFor="let p of liste">
+                        {{p.id}} - {{p.nom}} {{p.prenom}}
+                    </li>
+                </ul> 
+
+             
+                <br>
+                <br>
+              <button routerLink="/jt" class="bouton">Retour</button>
+              
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>remplissage works!</p> -->

@@ -1,0 +1,86 @@
+<h1 align="center"><u>Affichage du Palmarès des joueurs de tennis</u></h1>
+
+<br>
+<br>
+<br>
+<br>
+
+<div align="center">
+
+    <form [formGroup]="jtForm">       
+                    
+                    <label><B>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 
+                        Choisir un joueur de tennis (*)</B></label>                
+                    &nbsp;
+                    <select formControlName="jtSelect" id="jtSelect" (change)="getSelectedJt($event) ">
+                            
+                            <option  selected disabled value="" >Faites votre sélection</option> 
+                                                    
+                            <option *ngFor="let jt of liste" [value]="jt.id">{{jt.nom}} {{jt.prenom}}</option>
+                 
+                    </select>
+    </form>  
+
+     <table border = 0 width= '1400'>
+          <tr>
+             <td width= '1200' >&nbsp;</td>
+             <td width= '200'>  <h4><B>(*): Champ obligatoire</B></h4>  </td>
+          </tr>    
+    </table>
+    <br>
+    <br>
+    <br>
+
+       <button type="submit" class="bouton" (click)="onAnnuler()">Annuler</button> 
+        
+       <button type="button" class="bouton" (click)="onGo()"> Affichage du Palmarès du joueur de tennis sélectionné</button>
+
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div align="left">
+             
+              <button routerLink="/jt" class="bouton">Retour</button>
+              
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>affichage-jt works!</p> -->
