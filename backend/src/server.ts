@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 
 import jtRoutes from "./routes/jt.routes";
-import affichageRoutes from "./routes/affichage.routes ";
+import affichageRoutes from "./routes/affichage.routes";
 import affichageJtRoutes from "./routes/affichage-jt.routes";
 import affichageJt2Routes from "./routes/affichage-jt2.routes";
 import gestionJtRoutes from "./routes/gestion-jt.routes";
