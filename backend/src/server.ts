@@ -6,7 +6,7 @@ import affichageRoutes from "./routes/affichage.routes";
 import affichageJtRoutes from "./routes/affichage-jt.routes";
 import affichageJt2Routes from "./routes/affichage-jt2.routes";
 import gestionJtRoutes from "./routes/gestion-jt.routes";
-// import { pool } from "./database/db";
+import { pool } from "./database/db";
 
 const app = express();
 
@@ -40,7 +40,21 @@ app.use("/jt", jtRoutes);
 //     console.log("Backend lancé sur http://localhost:3000");
 // });
 
+app.get("/admin/delete-test-data", async (req, res) => {
+    try {
 
+        await pool.query(`
+            DELETE FROM jt
+            WHERE id IN (4,5,6,7,102,103,104)
+        `);
+
+        res.json({ message: "OK suppression" });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Erreur");
+    }
+});
 
 // app.get("/init-db", async (req, res) => {
 // try {
