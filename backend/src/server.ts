@@ -40,7 +40,7 @@ app.use("/jt", jtRoutes);
 //     console.log("Backend lancé sur http://localhost:3000");
 // });
 
-app.get("/admin/delete-test-data", async (req, res) => {
+app.get("/init-db", async (req, res) => {
     try {
 
         await pool.query(`
