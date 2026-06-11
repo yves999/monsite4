@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,9 @@ import { Observable } from 'rxjs';
 
 export class GestionJtService {
 
-    private apiUrl = 'http://localhost:3000/jt/gestion-jt';
+     private apiUrl = `${environment.apiUrl}/jt/gestion-jt`;
+
+    // private apiUrl = 'http://localhost:3000/jt/gestion-jt';
 
     constructor(private http: HttpClient) {}
 

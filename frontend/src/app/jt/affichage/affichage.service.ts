@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,10 @@ import { Observable } from 'rxjs';
 
 export class AffichageService {
 
-  private apiUrl = 'http://localhost:3000/jt/affichage';
+
+  private apiUrl = `${environment.apiUrl}/jt/affichage`;
+
+  // private apiUrl = 'http://localhost:3000/jt/affichage';
 
   constructor(private http: HttpClient) {}
 
