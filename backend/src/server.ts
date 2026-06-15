@@ -70,26 +70,15 @@ app.get("/init-db", async (req, res) => {
       );
     `);
 
-    // await pool.query(`
-    //   INSERT INTO jt (nom, prenom, mel, rog, wim, uso)
-    //   VALUES
-    //   ('Djokovic', 'Novak', '10', '3', '7', '4'),
-    //   ('Federer', 'Roger', '6', '1', '8', '5'),
-    //   ('Nadal', 'Rafael', '2', '14', '2', '4')
-    // `);
+    await pool.query(`
+      INSERT INTO jt (nom, prenom, mel, rog, wim, uso)
+      VALUES
+      ('Djokovic', 'Novak', '10', '3', '7', '4'),
+      ('Federer', 'Roger', '6', '1', '8', '5'),
+      ('Nadal', 'Rafael', '2', '14', '2', '4')
+    `);
 
-        await pool.query(`
-            INSERT INTO jt (id, nom, prenom, mel, rog, wim, uso)
-            VALUES
-            (3, 'Djokovic', 'Novak', '10', '3', '7', '4'),
-            (1, 'Federer', 'Roger', '6', '1', '8', '5'),
-            (2, 'Nadal', 'Rafael', '2', '14', '2', '4'),
-            (97, 'Agassi', 'André', '4', '1', '1', '2'),
-            (98, 'Sampras', 'Pete', '2', '0', '7', '5'),
-            (99, 'Connors', 'Jimmy', '1', '0', '2', '5'),
-            (100, 'Mac Enroe', 'John', 'demi-finaliste', 'finaliste', '3', '4'),
-            (101, 'Borg', 'Björn', '0', '6', '5', 'finaliste')  
-        `);
+
     
 
     res.send("Base initialisée");
