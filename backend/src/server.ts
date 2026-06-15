@@ -105,12 +105,12 @@ app.get("/init-db", async (req, res) => {
 
     
 
-    res.send("Base initialisée");
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Erreur DB");
-  }
-});
+//     res.send("Base initialisée");
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send("Erreur DB");
+//   }
+// });
 
 // app.get("/init-db2", async (req, res) => {
 //     try {
