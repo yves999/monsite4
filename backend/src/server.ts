@@ -88,12 +88,16 @@ app.use("/jt", jtRoutes);
 //     }
 // });
 
-console.log("🔥 SERVER FILE UPDATED");
+// console.log("🔥 SERVER FILE UPDATED");
 
-app.get("/test123", (req, res) => {
-  res.send("TEST OK");
+// app.get("/test123", (req, res) => {
+//   res.send("TEST OK");
+// });
+
+
+app.get("/ping", (req, res) => {
+  res.send("PING OK");
 });
-
 
 // app.get("/init-db", async (req, res) => {
 // try {
