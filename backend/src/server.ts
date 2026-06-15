@@ -58,6 +58,8 @@ app.get("/init-db", async (req, res) => {
     }
 });
 
+
+
 // app.get("/init-db", async (req, res) => {
 // try {
 //         await pool.query(`
