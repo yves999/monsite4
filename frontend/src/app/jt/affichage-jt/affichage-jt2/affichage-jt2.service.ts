@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AffichageJt2Service {
 
   getJT(idJt: any): Observable<any[]> {
 
-    const apiUrl = `http://localhost:3000/jt/affichage-jt2/${idJt}`;
+    const apiUrl = `${environment.apiUrl}/jt/affichage-jt2/${idJt}`;
 
     return this.http.get<any[]>(apiUrl);
   }
