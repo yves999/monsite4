@@ -22,7 +22,7 @@ export class GestionJtService {
 
     getGestionJt2(idJt: any): Observable<any[]> {
 
-       const apiUrl2 = `http://localhost:3000/jt/gestion-jt/${idJt}`;
+       const apiUrl2 = `${environment.apiUrl}/jt/gestion-jt/${idJt}`;
 
        return this.http.get<any[]>(apiUrl2);
     }
@@ -36,7 +36,7 @@ export class GestionJtService {
 
     modifierJT(id: any, data: any): Observable<any> {
 
-        const apiUrl2 = `http://localhost:3000/jt/gestion-jt/${id}`;
+        const apiUrl2 = `${environment.apiUrl}jt/gestion-jt/${id}`;
 
         console.log ("modifierJT_data: ", data)
 
@@ -45,7 +45,7 @@ export class GestionJtService {
 
     supprimerJT(id: any): Observable<any> {
 
-          const apiUrl2 = `http://localhost:3000/jt/gestion-jt/${id}`;
+          const apiUrl2 = `${environment.apiUrl}/jt/gestion-jt/${id}`;
 
           console.log ("supprimerJT_id: ", id)
 
