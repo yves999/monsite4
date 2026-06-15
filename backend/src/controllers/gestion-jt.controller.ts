@@ -82,6 +82,7 @@ export const createGestionJt = async (req: Request, res: Response) => {
 
   
 
+    
 
 
 };
