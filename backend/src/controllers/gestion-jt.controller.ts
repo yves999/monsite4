@@ -61,10 +61,19 @@ export const createGestionJt = async (req: Request, res: Response) => {
     }
 
 
+   
+
     const result = await pool.query(
-        "INSERT INTO JT (nom,prenom,mel,rog,wim,uso) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *",
-        [nom, prenom, mel, rog, wim, uso]
+        `INSERT INTO jt (id, nom, prenom, mel, rog, wim, uso) VALUES ( (SELECT COALESCE(MAX(id), 0) + 1 FROM jt),
+    $1, $2, $3, $4, $5, $6) RETURNING *`,[nom, prenom, mel, rog, wim, uso]
     );
+
+//  const result = await pool.query(
+//         "INSERT INTO JT (nom,prenom,mel,rog,wim,uso) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *",
+//         [nom, prenom, mel, rog, wim, uso]
+//     );
+
+
 
      console.log ("result_CREATE: ", result);
 
@@ -73,6 +82,7 @@ export const createGestionJt = async (req: Request, res: Response) => {
 
   
 
+    
 
 
 };
