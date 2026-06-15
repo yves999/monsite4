@@ -50,10 +50,10 @@ app.get("/init-db", (req, res) => {
 
 
 
-// app.get("/debug-jt", async (req, res) => {
-//   const result = await pool.query("SELECT * FROM jt");
-//   res.json(result.rows);
-// });
+app.get("/init-db", async (req, res) => {
+  const result = await pool.query("SELECT * FROM jt");
+  res.json(result.rows);
+});
 
 // app.get("/init-db2", async (req, res) => {
 //     try {
