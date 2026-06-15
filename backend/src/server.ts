@@ -42,21 +42,28 @@ app.use("/jt", jtRoutes);
 //     console.log("Backend lancé sur http://localhost:3000");
 // });
 
-app.get("/init-db2", async (req, res) => {
-    try {
 
-        await pool.query(`
-            DELETE FROM jt
-            WHERE id = 102
-        `);
 
-        res.json({ message: "OK suppression2" });
-
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Erreur");
-    }
+app.get("/debug-jt", async (req, res) => {
+  const result = await pool.query("SELECT * FROM jt");
+  res.json(result.rows);
 });
+
+// app.get("/init-db2", async (req, res) => {
+//     try {
+
+//         await pool.query(`
+//             DELETE FROM jt
+//             WHERE id = 102
+//         `);
+
+//         res.json({ message: "OK suppression2" });
+
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).send("Erreur");
+//     }
+// });
 
 
 
