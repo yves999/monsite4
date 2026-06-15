@@ -47,7 +47,7 @@ app.get("/init-db2", async (req, res) => {
 
         await pool.query(`
             DELETE FROM jt
-            WHERE id = 97
+            WHERE id = 102
         `);
 
         res.json({ message: "OK suppression" });
