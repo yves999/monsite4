@@ -56,6 +56,7 @@ app.use("/jt", jtRoutes);
 // });
 
 
+
 app.get("/init-db", async (req, res) => {
   try {
     await pool.query(`
@@ -70,13 +71,36 @@ app.get("/init-db", async (req, res) => {
       );
     `);
 
-    await pool.query(`
-      INSERT INTO jt (nom, prenom, mel, rog, wim, uso)
-      VALUES
-      ('Djokovic', 'Novak', '10', '3', '7', '4'),
-      ('Federer', 'Roger', '6', '1', '8', '5'),
-      ('Nadal', 'Rafael', '2', '14', '2', '4')
-    `);
+    const result = await pool.query(`SELECT * FROM jt`);
+
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Erreur DB");
+  }
+});
+
+// app.get("/init-db", async (req, res) => {
+//   try {
+//     await pool.query(`
+//       CREATE TABLE IF NOT EXISTS jt (
+//         id SERIAL PRIMARY KEY,
+//         nom VARCHAR(100),
+//         prenom VARCHAR(100),
+//         mel VARCHAR(100),
+//         rog VARCHAR(100),
+//         wim VARCHAR(100),
+//         uso VARCHAR(100)
+//       );
+//     `);
+
+//     await pool.query(`
+//       INSERT INTO jt (nom, prenom, mel, rog, wim, uso)
+//       VALUES
+//       ('Djokovic', 'Novak', '10', '3', '7', '4'),
+//       ('Federer', 'Roger', '6', '1', '8', '5'),
+//       ('Nadal', 'Rafael', '2', '14', '2', '4')
+//     `);
 
 
     
