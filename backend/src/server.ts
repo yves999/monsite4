@@ -39,9 +39,9 @@ app.use("/jt", jtRoutes);
 // START SERVER
 
 
-app.get("/init-db", (req, res) => {
-  res.send("INIT DB ROUTE WORKS");
-});
+// app.get("/init-db", (req, res) => {
+//   res.send("INIT DB ROUTE WORKS");
+// });
 
 // app.listen(3000, () => {
 //     console.log("Backend lancé sur http://localhost:3000");
