@@ -21,6 +21,9 @@ app.get("/", (req, res) => {
 });
 
 
+
+
+
 // ROUTES
 
 app.use("/jt/affichage", affichageRoutes);
