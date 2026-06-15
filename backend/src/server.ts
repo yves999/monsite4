@@ -50,7 +50,7 @@ app.get("/init-db2", async (req, res) => {
             WHERE id = 102
         `);
 
-        res.json({ message: "OK suppression" });
+        res.json({ message: "OK suppression2" });
 
     } catch (err) {
         console.error(err);
