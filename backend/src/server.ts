@@ -88,6 +88,7 @@ app.use("/jt", jtRoutes);
 //     }
 // });
 
+console.log("🔥 SERVER FILE UPDATED");
 
 app.get("/test123", (req, res) => {
   res.send("TEST OK");
