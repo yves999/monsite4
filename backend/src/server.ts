@@ -26,6 +26,7 @@ app.get("/", (req, res) => {
 
 
 
+
 // ROUTES
 
 app.use("/jt/affichage", affichageRoutes);
@@ -53,10 +54,10 @@ app.use("/jt", jtRoutes);
 
 
 
-// app.get("/init-db", async (req, res) => {
-//   const result = await pool.query("SELECT * FROM jt");
-//   res.json(result.rows);
-// });
+app.get("/init-db", async (req, res) => {
+  const result = await pool.query("SELECT * FROM jt");
+  res.json(result.rows);
+});
 
 // app.get("/init-db", async (req, res) => {
 //   try {
