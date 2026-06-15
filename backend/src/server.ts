@@ -50,9 +50,53 @@ app.use("/jt", jtRoutes);
 
 
 
+// app.get("/init-db", async (req, res) => {
+//   const result = await pool.query("SELECT * FROM jt");
+//   res.json(result.rows);
+// });
+
+
 app.get("/init-db", async (req, res) => {
-  const result = await pool.query("SELECT * FROM jt");
-  res.json(result.rows);
+  try {
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS jt (
+        id SERIAL PRIMARY KEY,
+        nom VARCHAR(100),
+        prenom VARCHAR(100),
+        mel VARCHAR(100),
+        rog VARCHAR(100),
+        wim VARCHAR(100),
+        uso VARCHAR(100)
+      );
+    `);
+
+    // await pool.query(`
+    //   INSERT INTO jt (nom, prenom, mel, rog, wim, uso)
+    //   VALUES
+    //   ('Djokovic', 'Novak', '10', '3', '7', '4'),
+    //   ('Federer', 'Roger', '6', '1', '8', '5'),
+    //   ('Nadal', 'Rafael', '2', '14', '2', '4')
+    // `);
+
+        await pool.query(`
+            INSERT INTO jt (id, nom, prenom, mel, rog, wim, uso)
+            VALUES
+            (3, 'Djokovic', 'Novak', '10', '3', '7', '4'),
+            (1, 'Federer', 'Roger', '6', '1', '8', '5'),
+            (2, 'Nadal', 'Rafael', '2', '14', '2', '4'),
+            (97, 'Agassi', 'André', '4', '1', '1', '2'),
+            (98, 'Sampras', 'Pete', '2', '0', '7', '5'),
+            (99, 'Connors', 'Jimmy', '1', '0', '2', '5'),
+            (100, 'Mac Enroe', 'John', 'demi-finaliste', 'finaliste', '3', '4'),
+            (101, 'Borg', 'Björn', '0', '6', '5', 'finaliste')  
+        `);
+    
+
+    res.send("Base initialisée");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Erreur DB");
+  }
 });
 
 // app.get("/init-db2", async (req, res) => {
