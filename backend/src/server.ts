@@ -44,6 +44,7 @@ app.use("/jt", jtRoutes);
 
 
 
+
 app.get("/debug-jt", async (req, res) => {
   const result = await pool.query("SELECT * FROM jt");
   res.json(result.rows);
