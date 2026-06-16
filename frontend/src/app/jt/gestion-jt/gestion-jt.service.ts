@@ -36,7 +36,7 @@ export class GestionJtService {
 
     modifierJT(id: any, data: any): Observable<any> {
 
-        const apiUrl2 = `${environment.apiUrl}jt/gestion-jt/${id}`;
+        const apiUrl2 = `${environment.apiUrl}/jt/gestion-jt/${id}`;
 
         console.log ("modifierJT_data: ", data)
 
